@@ -4,9 +4,9 @@ Contributors: wing.louie
 Donate link: https://louiesonugan.com/donate/
 Tags: public post preview, expiration
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 8.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,13 @@ No, this plugin extends the [Public Post Preview](https://wordpress.org/plugins/
 
 == Changelog ==
 
+= 1.0.4 =
+* Tested with WordPress 6.9.
+* Enhanced code structure and improved escaping for better security.
+* Added proper internationalization support throughout the plugin.
+* Added capability checks for enhanced security.
+* Improved function documentation and code organization.
+
 = 1.0.3 =
 * Tested with WordPress 6.8.
 * Added a Settings link next to Deactivate on the Plugins page.
@@ -71,6 +78,9 @@ No, this plugin extends the [Public Post Preview](https://wordpress.org/plugins/
 * Initial implementation of dynamic expiration settings.
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+Tested for WordPress v6.9. Enhanced security with improved code structure and better internationalization support.
 
 = 1.0.3 =
 * Tested for WordPress v6.8.
