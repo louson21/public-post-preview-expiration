@@ -11,7 +11,7 @@
 // Check if Public Post Preview plugin is active
 if ( ! function_exists( 'pppex_is_ppp_active' ) ) {
 	function pppex_is_ppp_active() {
-		return class_exists( 'Public_Post_Preview' ) || defined( 'PUBLIC_POST_PREVIEW_VERSION' );
+		return class_exists( 'DS_Public_Post_Preview' );
 	}
 }
 
