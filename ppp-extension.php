@@ -2,11 +2,38 @@
 /**
  * Plugin Name: PPP Extension
  * Description: Extends the Public Post Preview plugin with custom functionality.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Louie Sonugan
  * Author URI: https://louiesonugan.com/
  * License: GPLv2 or later
+ * Text Domain: ppp-extension
+ * Domain Path: /languages
+ * Requires at least: 5.0
+ * Requires PHP: 8.0
+ * Requires Plugins: public-post-preview
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// Load translations
+if ( ! function_exists( 'pppex_load_textdomain' ) ) {
+	function pppex_load_textdomain() {
+		load_plugin_textdomain( 'ppp-extension', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	}
+}
+
+add_action( 'plugins_loaded', 'pppex_load_textdomain' );
+
+// Remove stored options on uninstall
+if ( ! function_exists( 'pppex_uninstall' ) ) {
+	function pppex_uninstall() {
+		delete_option( 'pppex_expiration_time' );
+	}
+}
+
+register_uninstall_hook( __FILE__, 'pppex_uninstall' );
 
 // Check if Public Post Preview plugin is active
 if ( ! function_exists( 'pppex_is_ppp_active' ) ) {
@@ -134,5 +161,3 @@ if ( ! function_exists( 'pppex_nonce_life' ) ) {
 }
 
 add_filter( 'ppp_nonce_life', 'pppex_nonce_life' );
-
-?>
