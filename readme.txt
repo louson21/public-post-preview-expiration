@@ -4,9 +4,9 @@ Contributors: wing.louie
 Donate link: https://louiesonugan.com/donate/
 Tags: public post preview, expiration
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,8 +50,19 @@ You can set the expiration time between **1 minute (minimum) and 43200 minutes (
 = Does this work without Public Post Preview installed? =
 No, this plugin extends the [Public Post Preview](https://wordpress.org/plugins/public-post-preview/) plugin, so it must be installed and activated first.
 
+= Does this work on Multisite? =
+The expiration setting applies network-wide to every site's Public Post Preview links, since it filters a shared nonce lifetime. It has not been extensively tested in multisite environments; use with that in mind.
+
 
 == Changelog ==
+
+= 1.0.5 =
+* Tested with WordPress 7.1.
+* Added `Requires Plugins` header so WordPress can natively flag when Public Post Preview is missing.
+* Added direct file access protection.
+* Added proper text domain loading for translations.
+* Added uninstall cleanup to remove stored settings when the plugin is deleted.
+* Removed unnecessary closing PHP tag.
 
 = 1.0.4 =
 * Tested with WordPress 6.9.
@@ -78,6 +89,9 @@ No, this plugin extends the [Public Post Preview](https://wordpress.org/plugins/
 * Initial implementation of dynamic expiration settings.
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+Tested for WordPress v7.1. Adds native plugin dependency check, direct access protection, translation loading, and uninstall cleanup.
 
 = 1.0.4 =
 Tested for WordPress v6.9. Enhanced security with improved code structure and better internationalization support.
